@@ -157,3 +157,25 @@ wp plugin list
 You can also visit `http://127.0.0.1:8080` to access phpMyAdmin after starting the containers.
 
 The default username is `root`, and the password is the same as supplied in the `.env` file.
+
+### Localización Chile
+
+```
+docker exec wordpress-docker-compose-wp-1 wp site switch-lenguage es_CL --allow-root
+```
+
+```
+docker exec wordpress-docker-compose-wp-1 wp site switch-language es_CL --allow-root
+```
+
+```
+docker exec --user www-data wordpress-docker-compose-wp-1 wp option update timezone_string "America/Santiago"
+```
+
+```
+docker exec --user www-data wordpress-docker-compose-wp-1 wp option update date_format "d-m-Y"
+```
+
+```
+docker exec --user www-data wordpress-docker-compose-wp-1 wp option update time_format "H:i"
+```
